@@ -5,6 +5,7 @@ namespace SimpleNews.Api.Models
 {
     public class GoogleNewsResponse
     {
+
         [JsonConstructor]
         public GoogleNewsResponse(int totalArticles, List<NewsArticle> articles)
         {

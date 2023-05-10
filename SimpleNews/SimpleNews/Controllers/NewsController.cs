@@ -45,7 +45,8 @@ namespace SimpleNews.Controllers
             // TODO: Abstract out to middleware to catch exceptions globally.
             try
             {
-                result = new OkObjectResult(await _newsService.SearchTopHeadlines(searchTerm, Enum.Parse<Country>(country)));
+                Country parsedCountry = Enum.Parse<Country>(country.ToUpper());
+                result = new OkObjectResult(await _newsService.SearchTopHeadlines(searchTerm, parsedCountry));
             }
             catch (Exception ex)
             {

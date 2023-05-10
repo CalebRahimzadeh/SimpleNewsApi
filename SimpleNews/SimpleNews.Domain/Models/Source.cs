@@ -8,13 +8,13 @@ namespace SimpleNews.Domain.Models
     public class Source
     {
         [JsonConstructor]
-        public Source(string name, Uri uri)
+        public Source(string name, string uri)
         {
             this.Name = name;
             this.Url = uri;
         }
         public string Name { get; private set; }
-        public Uri Url { get; private set; }
+        public string Url { get; private set; }
         
     }
 }

@@ -26,7 +26,6 @@ namespace SimpleNews.Application.Services
 
         public async Task<List<NewsArticle>> GetTopHeadlines()
         {
-            var t = _apiKey.ToQueryString();
             string url = _googleNewsClient.BaseAddress + "/top-headlines?category=general" + _apiKey.ToQueryString();
             HttpResponseMessage response = await _googleNewsClient.GetAsync(url);
 
