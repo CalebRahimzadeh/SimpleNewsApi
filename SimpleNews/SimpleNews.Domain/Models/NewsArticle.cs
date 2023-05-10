@@ -1,7 +1,10 @@
-﻿namespace SimpleNews.Domain.Models
+﻿using System.Text.Json.Serialization;
+
+namespace SimpleNews.Domain.Models
 {
     public class NewsArticle
     {
+        [JsonConstructor]
         public NewsArticle(string title, string description, string content, Uri uri, Uri imageUri, DateTime publishedAt, Source source)
         {
             Title = title;
